@@ -11,8 +11,7 @@ mf(){
     kotlinc *.kt -d $jar
     java -jar $jar
 }
-#kotlinc *.kt
-mf
+kotlinc *.kt
 for i in $(pwd)/*.class; do
     $(pwd)/MainFunctionVerify $i
     if [ "$?" = "0" ]; then
