@@ -30,7 +30,7 @@ compile_start(){
     $(pwd)/*.cpp -o $(dirname "$0")/MainFunctionVerify && echo "*编译完成*" || exit 1
     /data/data/com.termux/files/usr/bin/aarch64-linux-android-strip $(dirname "$0")/MainFunctionVerify
     chmod +x $(dirname "$0")/MainFunctionVerify
-
+    mv -f $(dirname "$0")/MainFunctionVerify  ../Runner
     echo "当前时间：$(date +%Y) 年 $(date +%m) 月 $(date +%d) 日 $(date +%H) 时 $(date +%M) 分 $(date +%S) 秒"
 }
 
@@ -39,7 +39,4 @@ echo "当前时间：$(date +%Y) 年 $(date +%m) 月 $(date +%d) 日 $(date +%H)
 format_code
 compile_start
 remove_file 2>/dev/null
-echo "------------开始运行...-------------------"
-./MainFunctionVerify
-echo "------------结束运行...-------------------"
-ldd /data/data/com.termux/files/home/t/MainFunctionVerify
+
