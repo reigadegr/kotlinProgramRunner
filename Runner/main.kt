@@ -1,12 +1,21 @@
-// args : Array<String>
-// fun sum(a : Int, b : Int) : Int { return a + b; }
-fun birthdayGreeting(name : String = "rover", age : Int) : String {
-    var name_ = "Happy Birthday, $name!";
-    val age_ = "You are now $age years old!";
-    return "$name_\n$age_";
+
+class SmartDevice {
+	fun turnOn()
+	{
+		println("Smart device is turned on.");
+	}
+
+	fun turnOff()
+	{
+		println("Smart device is turned off.");
+	}
+	val name = "Android TV";
 }
 
-fun main() {
-    println(birthdayGreeting(age = 9, name = "小李"));
-    println(birthdayGreeting(age = 6));
+fun main()
+{
+	val nnn = SmartDevice();
+	nnn.turnOn();
+	nnn.turnOff();
+	println(nnn.name);
 }
